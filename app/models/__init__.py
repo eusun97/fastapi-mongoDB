@@ -14,11 +14,11 @@ class MongoDB:
     def __init__(self):
         self.client = None
         self.engine = None
-        
+
     def connect(self):
         self.client = AsyncIOMotorClient(MONGO_URL)
-        self.engine = AIOEngine(moter_client=self.client, database=MONGO_DB_NAME)
-        print("DB와 성공적으로 연결됨")
+        self.engine = AIOEngine(motor_client=self.client, database=MONGO_DB_NAME)
+        print("DB 연결 성공")
        
 # 인스턴스 생성
 mongodb = MongoDB()
