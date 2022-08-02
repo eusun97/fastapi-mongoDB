@@ -19,6 +19,9 @@ class MongoDB:
         self.client = AsyncIOMotorClient(MONGO_URL)
         self.engine = AIOEngine(motor_client=self.client, database=MONGO_DB_NAME)
         print("DB 연결 성공")
-       
+
+    def close(self):
+        self.client.close()
+        
 # 인스턴스 생성
 mongodb = MongoDB()
